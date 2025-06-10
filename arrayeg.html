@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let arr = [];
+    function addElmenttoary()
+    {
+        let ele = document.getElementById("txt1").value;
+        arr.push(ele)
+        console.log(arr)
+        showdata()
+         document.getElementById("txt1").value="";
+
+    }
+    function showdata()
+    {
+        let s = "";
+        for(var i =0 ;i<arr.length;i++)
+        {
+            s= s+ arr[i]+"<br>"
+        }
+        
+        document.getElementById("p1").innerHTML=s
+    }
+    function sumofary()
+    {
+        let sum = 0;
+        for(var i=0;i<arr.length;i++)
+        {
+            sum += parseInt(arr[i])
+        }
+        document.getElementById("p1").innerHTML="sum of all the elements is "+ sum
+    }
+     function productofary()
+    {
+        let p  =1;
+        for(var i=0;i<arr.length;i++)
+        {
+            p *= parseInt(arr[i])
+        }
+        document.getElementById("p1").innerHTML="product of all the elements is "+ p
+    }
+</script>
+<body>
+    <div> 
+        Enter Name : <input type="text" id="txt1">
+        <input type="button" value="Add" onclick="addElmenttoary()">
+        <input type="button" value="show Sum" onclick="sumofary()">
+        <input type="button" value="show Product" onclick="productofary()">
+    </div>
+    <p id="p1">
+
+    </p>
+
+    
+</body>
+</html>
